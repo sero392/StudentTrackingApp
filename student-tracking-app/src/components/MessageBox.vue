@@ -1,20 +1,25 @@
 <template>
-  <v-dialog persistent v-model="isOpen" width="500">
+  <v-dialog persistent v-model="options.isOpen" width="500">
     <v-card>
-      <v-card-title>Remove</v-card-title>
-      <v-card-text>Are you sure to delete?</v-card-text>
-      <v-card-actions>
-        <v-btn color="primary" text @click="$emit('closedialog')">Close</v-btn>
-        <!-- <v-btn color="primary" text @click="deleteItem">Delete</v-btn>  -->
-      </v-card-actions>
+      <v-card-title>{{ options.title }}</v-card-title>
+      <v-card-text>{{options.message}}</v-card-text>
+      <!-- <v-card-actions>
+        <v-btn  text
+         color="primary"
+         v-on:click="options.isOpen = false">Kapat</v-btn>
+      </v-card-actions> -->
     </v-card>
   </v-dialog>
 </template>
 <script>
 export default {
-  name: 'MessageBox',
+  name: "MessageBox",
   data: () => ({
-    isOpen: false,
+    options: {
+      isOpen: false,
+      title: "",
+      message: "",
+    },
   }),
 };
 </script>

@@ -2,25 +2,28 @@
   <v-app>
     <v-main>
       <MessageBox ref="msgBox"></MessageBox>
-      <helloWorld :run="openMenu"></helloWorld>
+
+      <LoginForm></LoginForm>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld  from "./components/HelloWorld.vue";
+import LoginForm from './components/LoginForm.vue';
+import MessageBox  from "./components/MessageBox.vue";
+
 export default {
   name: "App",
   methods: {
-    openMenu: function () {
+    openMenu: function (options) {
       var th = this;
       var dialog = th.$refs.msgBox;
-      console.log(dialog);
-      dialog.isOpen = true;
+      dialog.options = options;
     },
   },
   components: {
-    HelloWorld,
+    LoginForm,
+    MessageBox,
   },
 
   data: () => ({
