@@ -1,7 +1,7 @@
 <template>
-  <v-dialog persistent v-model="options.isOpen" width="500">
+  <v-dialog  v-model="options.isOpen" width="300">
     <v-card>
-      <v-card-title>{{ options.title }}</v-card-title>
+      <v-card-title>{{ options.title || 'Mesaj' }}</v-card-title>
       <v-card-text>{{options.message}}</v-card-text>
       <!-- <v-card-actions>
         <v-btn  text
