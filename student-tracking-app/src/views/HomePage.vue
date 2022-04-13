@@ -1,13 +1,19 @@
 <template>
-  <v-container fill-height>
-    <v-row>
-      <v-col cols="12" md="6" class="mx-auto"> Merhaba </v-col>
-    </v-row>
-  </v-container>
+  <LayoutPage>
+   <v-container>
+     <v-row>
+       <v-col>
+         <h3>Test</h3>
+       </v-col>
+     </v-row>
+   </v-container>
+  </LayoutPage>
 </template>
 <script>
 import router from "../router";
 export default {
+  components: {
+  },
   name: "HomePage",
   mounted() {
     var token = localStorage.getItem("token");

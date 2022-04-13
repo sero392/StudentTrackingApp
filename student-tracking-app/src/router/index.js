@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import LoginForm from '../components/LoginForm.vue';
-import HomePage from '../components/HomePage.vue';
+import LoginForm from '../views/LoginPage.vue';
+import HomePage from '../views/HomePage.vue';
+import StudentsPage from '../views/StudentsPage.vue';
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ var routes = [
         path: '/Home',
         name: 'HomePage',
         component: HomePage,
+    },
+    {
+        path: '/Students',
+        name: 'StudentPage',
+        component: StudentsPage,
     }
 ]
 
