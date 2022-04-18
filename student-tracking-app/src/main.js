@@ -3,11 +3,10 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import 'vuetify/dist/vuetify.min.css';
 import router from './router/index.js';
-import MessageBox from "./components/MessageBoxComponent.vue";
 import LayoutPage from "./views/LayoutPage.vue";
+import VueSimpleAlert from "vue-simple-alert";
 
 Vue.config.productionTip = false
-Vue.component("MessageBox", MessageBox);
 Vue.component("LayoutPage", LayoutPage);
 Vue.prototype.store = {
   logged: false,
@@ -16,6 +15,7 @@ Vue.prototype.store = {
     router.push({ name: viewName }).catch(() => { });
   }
 };
+Vue.use(VueSimpleAlert);
 
 new Vue({
   vuetify,

@@ -53,7 +53,7 @@
                   </v-row>
                   <v-row dense>
                     <v-col cols="auto" class="ml-auto">
-                      <v-btn
+                      <!-- <v-btn
                         small
                         text
                         class="text-caption text-lowercase"
@@ -61,7 +61,7 @@
                         color="primary"
                       >
                         Şifremi Unuttum ?
-                      </v-btn>
+                      </v-btn> -->
                     </v-col>
                   </v-row>
                 </v-card-text>
@@ -72,7 +72,6 @@
         <v-overlay v-bind:value="overlay">
           <v-progress-circular indeterminate size="64"></v-progress-circular>
         </v-overlay>
-        <MessageBox ref="msgBox"></MessageBox>
       </v-container>
     </v-main>
   </v-app>
@@ -118,15 +117,15 @@ export default {
             localStorage.setItem("token", response.data.data);
             router.push({ name: "HomePage" });
           } else {
-            th.$refs.msgBox.options = {
-              isOpen: true,
-              title: "Hata!",
-              message: response.data.statusMessage,
-            };
+            th.$alert(response.data.statusMessage,'','error');
           }
         })
-        .catch(function (error) {
-          console.log(error);
+        .catch(function () {
+            th.$fire({
+              type:'error',
+              text: 'Sistem Hatası',
+              confirmButtonText:'Tamam'
+            });
           th.overlay = false;
         });
     },

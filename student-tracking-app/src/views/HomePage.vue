@@ -3,7 +3,7 @@
    <v-container>
      <v-row>
        <v-col>
-         <h3>Test</h3>
+         <h3>Ana Sayfa</h3>
        </v-col>
      </v-row>
    </v-container>
